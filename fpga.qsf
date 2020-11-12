@@ -65,6 +65,7 @@ set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-
 set_global_assignment -name SEARCH_PATH library/debouncer
 set_global_assignment -name SEARCH_PATH library/divider
 set_global_assignment -name SEARCH_PATH library/pll
+set_global_assignment -name SEARCH_PATH library/ws
 set_global_assignment -name SEARCH_PATH src
 
 #pin assigment
@@ -194,16 +195,10 @@ set_global_assignment -name TOP_LEVEL_ENTITY top
 
 #set_global_assignment -name QIP_FILE library/hdmi/hdmi.qip
 
-
-
-set_global_assignment -name SYSTEMVERILOG_FILE library/sdcard/sd_file_reader.sv
-set_global_assignment -name SYSTEMVERILOG_FILE library/sound/sawtoth.sv
 set_global_assignment -name VERILOG_FILE library/pll/pll.v
-set_global_assignment -name SYSTEMVERILOG_FILE library/hdmi/hdmi.sv
 set_global_assignment -name VERILOG_FILE library/debouncer/debouncer.v
 set_global_assignment -name VERILOG_FILE library/divider/divider.v
 set_global_assignment -name SYSTEMVERILOG_FILE src/app.sv
-set_global_assignment -name SYSTEMVERILOG_FILE src/test.sv
 set_global_assignment -name SDC_FILE board/clock.sdc
 set_global_assignment -name CDF_FILE board/chain.cdf
 set_global_assignment -name VERILOG_FILE top.v
