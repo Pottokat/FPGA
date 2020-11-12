@@ -1,0 +1,21 @@
+# Temps
+*.bak
+*.cdf
+*.done
+*.jdi
+*.pin
+
+# Output files
+*.asm.*
+*.eda.*
+*.fit.*
+*.flow.*
+*.map.*
+*.sta.*
+
+# Output directories	
+db/
+greybox_tmp/
+incremental_db/
+output_files/greybox_tmp/
+simulation/
