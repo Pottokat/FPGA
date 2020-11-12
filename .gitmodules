@@ -1,0 +1,3 @@
+[submodule "ac608"]
+	path = ac608
+	url = https://github.com/risapav/ac608.git
