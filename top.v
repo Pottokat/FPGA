@@ -129,16 +129,6 @@ output	SD_CS;
 		);
 	//end of frequency generator
 
-	//test clock
-//	Test test(
-//		.CLK1(clk_pix), 
-//		.CLK2(clk_pix10), 
-//		.CLK3(clk_audio), 
-//		.LED1(led[0]),
-//		.LED2(led[1]),
-//		.LED3(led[2])
-//		);
-
 	Divider	#( 
 		.DIVISOR(25000000) 
 	) 
