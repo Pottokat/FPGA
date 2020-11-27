@@ -44,8 +44,8 @@ module top
 	uart_tx,
 	uart_rx,
 	// hdmi interface
-	tmds_p,
-	tmds_n,
+//	tmds_p,
+//	tmds_n,
 	// user interface
 	button,
 	led,
@@ -91,8 +91,8 @@ input			uart_rx;
 input		[0:2]	button;
 output	[0:3]	led;
 // hdmi interface
-output	[0:3]	tmds_p;
-output	[0:3]	tmds_n;
+//output	[0:3]	tmds_p;
+//output	[0:3]	tmds_n;
 // spi interface
 input		SD_MISO; 
 output	SD_CLK;
@@ -146,8 +146,8 @@ output	SD_CS;
 		.clk_pix10(clk_pix10), 
 		.clk_audio(clk_audio),
 		// hdmi interface
-		.tmds_p(tmds_p), 
-		.tmds_n(tmds_n),
+//		.tmds_p(tmds_p), 
+//		.tmds_n(tmds_n),
 		// spi interface
 		.SD_MISO(SD_MISO), 
 		.SD_CLK(SD_CLK),

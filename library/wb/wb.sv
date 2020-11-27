@@ -1,0 +1,78 @@
+`ifndef DEFS_DONE
+	`define DEFS_DONE
+ 
+	interface wb_if
+	#( 
+	parameter DATA_WIDTH = 32,              // width of data bus in bits (8, 16, 32, or 64)
+	parameter ADDR_WIDTH = 32,              // width of address bus in bits
+	parameter SELECT_WIDTH = (DATA_WIDTH/8) // width of word select bus (1, 2, 4, or 8)
+	)
+//	(input bit clk, rst);
+();
+		logic clk;
+		logic rst;
+		logic [ADDR_WIDTH-1:0]   adr;	// ADR_I() address input
+		logic [DATA_WIDTH-1:0]   dat_i;	// DAT_I() data in
+		logic [DATA_WIDTH-1:0]   dat_o;	// DAT_O() data out
+		logic                    we;	// WE_I write enable input
+		logic [SELECT_WIDTH-1:0] sel;	// SEL_I() select input
+		logic                    stb;	// STB_I strobe input
+		logic                    ack;	// ACK_O acknowledge output
+		logic                    err;	// ERR_O error output
+		logic                    rty;	// RTY_O retry output
+		logic                    cyc;	// CYC_I cycle input
+
+ /*
+ * Wishbone slave 0 output
+ */
+		modport s (
+			input clk,
+			input rst,
+			input 	adr,	// ADR_I() address input
+			input 	dat_i,	// DAT_I() data in
+			output	dat_o,	// DAT_O() data out
+			input 	we,  	// WE_I write enable input
+			input 	sel,	// SEL_I() select input
+			input 	stb,	// STB_I strobe input
+			output	ack,	// ACK_O acknowledge output
+			output	err,	// ERR_O error output
+			output	rty,	// RTY_O retry output
+			input 	cyc  	// CYC_I cycle input
+		);
+
+/*
+ * Wishbone master input
+ */
+		modport m (
+			input clk,
+			input rst,
+			output	adr,	// ADR_O() address output
+			input 	dat_i,	// DAT_I() data in
+			output	dat_o,	// DAT_O() data out
+			output	we, 	// WE_O write enable output
+			output	sel,	// SEL_O() select output
+			output	stb,	// STB_O strobe output
+			input 	ack,	// ACK_I acknowledge input
+			input 	err,	// ERR_I error input
+			input 	rty,	// RTY_I retry input
+			output	cyc 	// CYC_O cycle output
+		);
+		
+	endinterface: wb_if
+
+//package wb_pkg;
+//
+//	const int SLAVES = 4; // num slaves objects
+//	const int MASTERS = 3;	// num masters objects
+//	
+//	const int DATA_WIDTH = 32;                    // width of data bus in bits (8, 16, 32, or 64)
+//	const int ADDR_WIDTH = 32;                    // width of address bus in bits
+//	const int SELECT_WIDTH = (DATA_WIDTH/8);      // width of word select bus (1, 2, 4, or 8)
+//	const string ARB_TYPE = "PRIORITY";           // arbitration type: "PRIORITY" or "ROUND_ROBIN"
+//	const string LSB_PRIORITY = "LOW";            // LSB priority: "LOW", "HIGH"
+//	
+//	typedef wb_if.m bus_m;
+//	typedef wb_if.m bus_s;
+//	
+//endpackage: wb_pkg
+`endif
